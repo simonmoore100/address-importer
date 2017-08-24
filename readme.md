@@ -20,21 +20,28 @@ Place the pointer dataset csv file inside the /csv directory.
 
 Open the CSV file in Excel.
 
-Create a new column between BUILDING_NUMBER and PRIMARY_THORFARE called HELPER_1.
+In the Developer tab, click on Visual Basic
 
-Create a new column between SUB_BUILDING_NAME and BUILDING_NAME called HELPER_2.
+Paste the following and select run:
 
-Create the following formula in HELPER_1
 ```sh
-*=SUMPRODUCT(MID(0&E2,LARGE(INDEX(ISNUMBER(--MID(E2,ROW($1:$25),1))*ROW($1:$25),0),ROW($1:$25))+1,1)*10^ROW($1:$25)/10)*
-```
+*Sub setUpNIData()
 
-Create the following formula in HELPER_2
-```sh
-*=SUMPRODUCT(MID(0&B2,LARGE(INDEX(ISNUMBER(--MID(B2,ROW($1:$25),1))*ROW($1:$25),0),ROW($1:$25))+1,1)*10^ROW($1:$25)/10)*
-```
+Dim lRow As Long
+lRow = Cells(Rows.Count, 3).End(xlUp).Row
 
-Click on a cell then shift click on the last cell to select the entire column, then cmd D to fill the formula down to all cells.
+'Inserting and renaming columns
+Range("C1").EntireColumn.Insert
+Range("C2:C1000000").Select
+Selection.Formula = "=SUMPRODUCT(MID(0&B2,LARGE(INDEX(ISNUMBER(--MID(B2,ROW($1:$25),1))*ROW($1:$25),0),ROW($1:$25))+1,1)*10^ROW($1:$25)/10)"
+Range("C1").Value = "HELPER_2"
+Range("F1").EntireColumn.Insert
+Range("F2:F1000000").Select
+Selection.Formula = "=SUMPRODUCT(MID(0&E2,LARGE(INDEX(ISNUMBER(--MID(E2,ROW($1:$25),1))*ROW($1:$25),0),ROW($1:$25))+1,1)*10^ROW($1:$25)/10)"
+Range("F1").Value = "HELPER_1"
+
+End Sub*
+```
 
 Select the POSTCODE column
 
