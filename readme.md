@@ -25,7 +25,7 @@ In the Developer tab, click on Visual Basic
 Paste the following and select run:
 
 ```sh
-*Sub setUpNIData()
+Sub setUpNIData()
 
 Dim lRow As Long
 lRow = Cells(Rows.Count, 3).End(xlUp).Row
@@ -40,7 +40,7 @@ Range("F2:F1000000").Select
 Selection.Formula = "=SUMPRODUCT(MID(0&E2,LARGE(INDEX(ISNUMBER(--MID(E2,ROW($1:$25),1))*ROW($1:$25),0),ROW($1:$25))+1,1)*10^ROW($1:$25)/10)"
 Range("F1").Value = "HELPER_1"
 
-End Sub*
+End Sub
 ```
 
 Select the POSTCODE column
@@ -73,7 +73,7 @@ Save the Workbook
 
 Run the application.
 ```sh
-*npm start*
+npm start
 ```
 
 Browse to http://localhost:3000 and select which conversion you require.
