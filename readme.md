@@ -27,9 +27,6 @@ Paste the following and select run:
 ```sh
 Sub setUpNIData()
 
-Dim lRow As Long
-lRow = Cells(Rows.Count, 3).End(xlUp).Row
-
 'Inserting and renaming columns
 Range("C1").EntireColumn.Insert
 Range("C2:C1000000").Select
@@ -65,9 +62,21 @@ Rename it to whatever you want and update the settings.js file with the filename
 
 Open the newly created csv file
 
-Filter by postcode and remove duplicates by Data > Remove duplicates
+Paste in the below to the Visual Basic script section
 
-Delete all other data so you are just left with a column of unique postcodes
+```sh
+
+Sub deleteColumns()
+
+'Deleting columns
+Range("A1:M1").EntireColumn.Delete
+Range("B1:R1").EntireColumn.Delete
+
+End Sub
+
+```
+
+Click on the data tab and select Remove Duplicates
 
 Save the Workbook
 
