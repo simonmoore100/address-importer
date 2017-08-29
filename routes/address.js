@@ -55,7 +55,16 @@ router.get('/', function(req, res, next) {
                 }
 
                 if (street.length > 1){
+                    if (!street.includes("Jan-") && !street.includes("Feb-") && !street.includes("Mar-") && !street.includes("Apr-") 
+                        && !street.includes("May-") && !street.includes("Jun-") && !street.includes("Jul-") && !street.includes("Aug-") 
+                        && !street.includes("Sep-") && !street.includes("Oct-") && !street.includes("Nov-") && !street.includes("Dec-") 
+                        && !street.includes("-Jan") && !street.includes("-Feb") && !street.includes("-Mar") && !street.includes("-Apr") 
+                        && !street.includes("-May") && !street.includes("-Jun") && !street.includes("-Jul") && !street.includes("-Aug") 
+                        && !street.includes("-Sep") && !street.includes("-Oct") && !street.includes("-Nov") && !street.includes("-Dec")){
+                    
                     addressLine.append("\"street\":\"" + capitalize.initCapAndLowerCaseAllTheOthers(street.trim()) + "\",");
+                    
+                    }
                 }
 
                 if (locality.length > 1){
@@ -94,7 +103,16 @@ router.get('/', function(req, res, next) {
                 addressLine.append("\"primaryClassification\":\"Residential\",");
                 addressLine.append("\"secondaryClassification\":\"Dwelling\"},");
                 addressLine.append("\"ordering\":{");
-                addressLine.append("\"paoStartNumber\":" + helper1 + ",");
+
+                if (!helper1.includes("Jan-") && !helper1.includes("Feb-") && !helper1.includes("Mar-") && !helper1.includes("Apr-") 
+                    && !helper1.includes("May-") && !helper1.includes("Jun-") && !helper1.includes("Jul-") && !helper1.includes("Aug-") 
+                    && !helper1.includes("Sep-") && !helper1.includes("Oct-") && !helper1.includes("Nov-") && !helper1.includes("Dec-") 
+                    && !helper1.includes("-Jan") && !helper1.includes("-Feb") && !helper1.includes("-Mar") && !helper1.includes("-Apr") 
+                    && !helper1.includes("-May") && !helper1.includes("-Jun") && !helper1.includes("-Jul") && !helper1.includes("-Aug") 
+                    && !helper1.includes("-Sep") && !helper1.includes("-Oct") && !helper1.includes("-Nov") && !helper1.includes("-Dec")){
+                    
+                    addressLine.append("\"paoStartNumber\":" + helper1 + ",");
+                }
 
                 if (helper2 > 0){
                     addressLine.append("\"saoText\":" + helper2 + ",");

@@ -1,0 +1,39 @@
+{ 
+    "_id" : ObjectId("58aafa6203c80577befcf18d"), 
+    "postcode" : "bt12ab", 
+    "gssCode" : "N07000001", 
+    "country" : "Northern Ireland", 
+    "uprn" : "00000000000", 
+    "createdAt" : ISODate("2017-02-20T14:17:06.616+0000"), 
+    "presentation" : {
+        "property" : "niproperty", 
+        "street" : "nistreet", 
+        "locality" : "nilocality", 
+        "town" : "nitown", 
+        "area" : "niarea", 
+        "postcode" : "BT1 2AB"
+    }, 
+    "location" : {
+        "lat" : 1.1, 
+        "long" : NumberInt(0)
+    }, 
+    "details" : {
+        "blpuCreatedAt" : ISODate("2017-02-20T14:17:06.616+0000"), 
+        "blpuUpdatedAt" : ISODate("2017-02-20T14:17:06.616+0000"), 
+        "classification" : "RD", 
+        "status" : "inUse", 
+        "state" : "approved", 
+        "isPostalAddress" : true, 
+        "isCommercial" : false, 
+        "isResidential" : true, 
+        "isHigherEducational" : false, 
+        "isElectoral" : true, 
+        "usrn" : "1234", 
+        "file" : "ALLNI_20170220_F.csv", 
+        "primaryClassification" : "Residential", 
+        "secondaryClassification" : "Dwelling"
+    }, 
+    "ordering" : {
+        "saoText" : "property"
+    }
+}
